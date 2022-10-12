@@ -1,3 +1,9 @@
+/* //Author: Mahad Osman
+//Exercise: Connect four project
+//Date: Oct 12, 2022
+//Reference: Springboard Connect Four solution for findSpotCol(x) & how to handle a tie 
+Possible to do: add animation! and change the pieces to be postioned absolutley*/
+
 /* game board table */
 
 #board td {
@@ -13,6 +19,15 @@
   margin: 5px;
   width: 80%;
   height: 80%;
+  border-radius: 50%; /* to round our pieces*/
+}
+
+.player1{
+  background-color: red;
+}
+
+.player2{
+  background-color: blue;
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
