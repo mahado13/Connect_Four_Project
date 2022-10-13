@@ -1,7 +1,9 @@
 /* //Author: Mahad Osman
 //Exercise: Connect four project
 //Date: Oct 12, 2022
-//Reference: Springboard Connect Four solution for findSpotCol(x) & how to handle a tie 
+//References: 
+- Springboard Connect Four solution for findSpotCol(x) & how to handle a tie & length key in makeBoard
+- how to animate a piece drop down: https://stackoverflow.com/questions/48352599/dropping-token-animations-on-a-connect-four-board
 Possible to do: add animation! and change the pieces to be postioned absolutley*/
 
 /* game board table */
@@ -20,6 +22,7 @@ Possible to do: add animation! and change the pieces to be postioned absolutley*
   width: 80%;
   height: 80%;
   border-radius: 50%; /* to round our pieces*/
+  /*position: absolute;*/
 }
 
 .player1{
@@ -29,6 +32,24 @@ Possible to do: add animation! and change the pieces to be postioned absolutley*
 .player2{
   background-color: blue;
 }
+
+/* The following code was implemented from a reference */
+.dropPiece{
+  animation-name: fall-animation;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation {
+    from{
+      transform: translateY(-500px);
+    }
+    to{
+      transform: translateY(0);
+    }
+}
+/**********************************************************/
+
+
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
 

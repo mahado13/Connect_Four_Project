@@ -1,7 +1,10 @@
 //Author: Mahad Osman
 //Exercise: Connect four project
 //Date: Oct 12, 2022
-//Reference: Springboard Connect Four solution for findSpotCol(x) & how to handle a tie
+/*Reference: 
+- Springboard Connect Four solution for findSpotCol(x) & how to handle a tie & length key in makeBoard
+- how to animate a piece drop down: https://stackoverflow.com/questions/48352599/dropping-token-animations-on-a-connect-four-board
+*/
 
 /** Connect Four
  *
@@ -26,7 +29,8 @@ function makeBoard() {
 
   //Building an Array while y is less than height we push in columns while y != height
   for (let y = 0; y < HEIGHT; y++){
-    board.push(Array.from({size: WIDTH}));
+    board.push(Array.from({length: WIDTH}));
+    //console.log(board);
   }
 }
 
@@ -93,6 +97,8 @@ function placeInTable(y, x) {
 let piece = document.createElement('div');
 piece.classList.add('piece');
 piece.classList.add(`player${currPlayer}`);
+piece.classList.add('dropPiece');
+
 
 piece.style.top = -50 * (y+2); //referenced from the solution
 
@@ -142,9 +148,10 @@ function handleClick(evt) {
 
   //We will need to check if every row & and every cell is full, if it is indeed full than return end game with a msg for tie
   //Referenced the solution 
-  if(board.every((row) => row.every((cell) => cell))){
-    return endGame('It was a tie!');  
+  if(board.every(row => row.every(cell => cell))){
+    return endGame('It was a tie!')
   }
+
 
 // if (board.every((row)=>{
 //   row.every((cell)=>{
@@ -158,7 +165,7 @@ function handleClick(evt) {
   // TODO: switch currPlayer 1 <-> 2
 
   //If current player is equal to 1 than switch to 2 else switch to 1
-  currPlayer = currPlayer === 1?  2:1; //Ternary operator version
+  currPlayer = currPlayer === 1 ?  2:1; //Ternary operator version
 
   //If else version
   // if(currPlayer === 1){
